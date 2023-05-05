@@ -1,38 +1,27 @@
-# BONELAB Fusion Release
-A multiplayer mod for BONELAB featuring support for Oculus and SteamVR.
-This is currently only for PCVR platforms.
-## Networking
-This mod is networked and built around Steam, but the networking system can be swapped out using a Networking Layer.
+#Garbage Proof of Concept
 
-## Modules
-Fusion supports a system called "Modules". This allows other code mods to addon and sync their own events in Fusion.
-Fusion also has an SDK for integrating features into Marrow™ SDK items, maps, and more.
+This whole practice was just because:
+1. I blundered and couldn't explain my idea in the discord
+2. I said that i'd set up a proof of concept (crazy reason, i know)
 
-## Marrow SDK Integration
-NOTICE:
-When using the integration, if you have the extended sdk installed, delete the "MarrowSDK" script that comes with the extended sdk.
-It can be found in "Scripts/SLZ.Marrow.SDK/SLZ/Marrow/MarrowSDK".
-The reason for this is that this is already included in the real sdk, and Fusion uses some values from it, causing it to get confused.
+this """"""release"""""" works with vanilla players
 
-You can download the integration unity package from the Releases tab of this repository.
-Alternatively, you can download the files raw at this link:
-https://github.com/Lakatrazz/BONELAB-Fusion/tree/main/Core/marrow-integration
+The full barcode of an avatar (which has the pallets barcode prefixed) 
+is synced to each client, so each client could search through 
+the repositories linked in their repositories.txt file for the 
+associated pallet.
 
-## Module Example
-The module example can be found here:
-https://github.com/Lakatrazz/Fusion-Module-Example
+I understand that more data about the avatar's pallet would need to be synced 
+for security and updates, this is just to show that it's possible in a crude fashion
 
-## Credits
-- BoneLib AutoUpdater: https://github.com/yowchap/BoneLib
-- Testing/Development Credits In Game
+FYI due to some SLZ code shenanigans, this mod will only search repositories
+linked in the repositories.txt in your BONELABS Installation folder
 
-## Setting up the Source Code
-1. Clone the git repo into a folder
-2. Setup a "managed" folder in the "Core" folder.
-3. Drag the dlls from Melonloader/Managed into the managed folder.
-4. Drag MelonLoader.dll and 0Harmony.dll into the managed folder.
-5. You're done!
+FYI 2. This is dependant on JevilBL (https://bonelab.thunderstore.io/package/extraes/JeviLibBL/)
+Since i need to use an await on a Unitask. In order for JevilBL to work you'll need to launch
+the game with it installed twice, so it can rebuild melonloaders managed assemblies with the
+missing Unitask.Awaitter's interfaces.
 
-## Disclaimer
 
-#### THIS PROJECT IS NOT AFFILIATED WITH ANY OTHER MULTIPLAYER MODS OR STRESS LEVEL ZERO! This is its own standalone mod and shares no code with others, any similarities are coincidental!
+There are some obvious bugs that will stop certain avatars from loading, just due to how
+it's parseing and verifying barcodes
