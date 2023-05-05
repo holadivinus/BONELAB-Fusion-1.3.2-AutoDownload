@@ -4,7 +4,8 @@ This whole practice was just because:
 1. I blundered and couldn't explain my idea in the discord
 2. I said that i'd set up a proof of concept (crazy reason, i know)
 
-this """"""release"""""" works with vanilla players
+this """"""release"""""" works with vanilla players,
+Check Core\src\Representation\BarcodeDownloader.cs for the bulk of the code.
 
 The full barcode of an avatar (which has the pallets barcode prefixed) 
 is synced to each client, so each client could search through 
